@@ -1,5 +1,5 @@
 #給你兩個 已排序的鏈表（Linked List） list1 和 list2，請你將它們合併成一個新的排序鏈表，並返回新的鏈表頭節點。
-
+import heapq
 
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -38,6 +38,8 @@ def linked_list_to_list(node):
         node = node.next
     return result
 
+    
+
 # 轉換輸入
 l1 = list_to_linked_list([1, 2, 4])
 l2 = list_to_linked_list([1, 3, 4])
@@ -47,3 +49,12 @@ merged = mergeTwoLists(l1, l2)
 
 # 轉回 Python list 輸出
 print(linked_list_to_list(merged))  # 輸出: [1, 1, 2, 3, 4, 4]
+
+print("其他方法")
+
+list1 = [1, 2, 4]
+list2 = [1, 3, 4]
+
+print(list(heapq.merge(list1, list2)))  # ➝ [1, 1, 2, 3, 4, 4]
+
+
